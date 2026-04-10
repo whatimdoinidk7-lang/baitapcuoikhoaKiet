@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8">
+        <title>Chi tiết sản phẩm</title>
+        <link rel="stylesheet" href="si-tai-s.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <style>
+            .product-details-wrapper {
+                margin-top: 100px;
+                padding: 60px 0;
+                background-color: #f9f9f9;
+                min-height: calc(100vh - 200px);
+            }
+            .product-details-container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 20px;
+            }
+            .product-details-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 60px;
+                margin-bottom: 40px;
+                background-color: white;
+                padding: 40px;
+                border-radius: 10px;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            }
+            .product-image {
+                width: 100%;
+                height: auto;
+                border-radius: 10px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                object-fit: cover;
+            }
+            .product-info h1 {
+                font-size: 36px;
+                margin-bottom: 20px;
+                color: #333;
+                font-weight: bold;
+            }
+            .product-price {
+                font-size: 36px;
+                color: #ff6b35;
+                font-weight: bold;
+                margin: 25px 0;
+            }
+            .product-description {
+                margin: 25px 0;
+                line-height: 1.8;
+                color: #666;
+                font-size: 16px;
+                padding: 20px;
+                background-color: #f5f5f5;
+                border-radius: 8px;
+            }
+            .product-specs {
+                margin: 30px 0;
+                padding: 20px;
+                background-color: #fafafa;
+                border-radius: 8px;
+            }
+            .product-specs h3 {
+                margin-bottom: 20px;
+                font-size: 22px;
+                color: #333;
+                font-weight: bold;
+            }
+            .product-specs ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+            .product-specs li {
+                padding: 12px 0;
+                border-bottom: 1px solid #e0e0e0;
+                font-size: 16px;
+            }
+            .product-specs li:last-child {
+                border-bottom: none;
+            }
+            .product-specs li strong {
+                display: inline-block;
+                width: 180px;
+                color: #333;
+            }
+            .buy-buttons {
+                margin-top: 40px;
+                display: flex;
+                gap: 15px;
+            }
+            .buy-buttons button {
+                padding: 16px 50px;
+                font-size: 18px;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+                font-weight: bold;
+                transition: all 0.3s ease;
+                flex: 1;
+            }
+            .btn-buy-now {
+                background-color: #d59c2a;
+                color: black;
+            }
+            .btn-buy-now:hover {
+                background-color: #ad7b17;
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(213, 156, 42, 0.4);
+            }
+            .btn-add-cart {
+                background-color: #333;
+                color: white;
+            }
+            .btn-add-cart:hover {
+                background-color: #555;
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            }
+            @media (max-width: 768px) {
+                .product-details-grid {
+                    grid-template-columns: 1fr;
+                    gap: 30px;
+                    padding: 20px;
+                }
+                .product-info h1 {
+                    font-size: 28px;
+                }
+                .product-price {
+                    font-size: 28px;
+                }
+                .buy-buttons {
+                    flex-direction: column;
+                }
+                .buy-buttons button {
+                    width: 100%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <div class="containers">
+                <nav class="navbar">
+                    <div class="logo"><img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/store-logo-design-template-3ac57f780d1cae2a6d3a049f82c62437_screen.jpg?ts=1737372343"></div>
+                    <ul class="nav-links">
+                        <input type="text" placeholder="Tìm kiếm sản phẩm...">
+                        <li><a href="home.html">Trang chủ</a></li>
+                        <li><a href="settings.html">Cài đặt</a></li>
+                        <li><a href="about.html">Về chúng tôi</a></li>
+                        <li><a href="contact.html">Liên hệ</a></li>
+                        <li><a href="login.html">Đăng xuất</a></li>
+                    </ul>   
+                </nav>
+            </div>
+        </div>
+
+        <div class="product-details-wrapper">
+            <div class="product-details-container">
+                <div id="product-content">
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Dịch vụ khách hàng</h4>
+                    <p>Trung Tâm Trợ Giúp</p>
+                    <p>Blog</p>
+                    <p>Mall</p>
+                    <p>Hướng Dẫn Mua Hàng</p>
+                    <p>Hướng Dẫn Bán Hàng</p>
+                    <p>Chính Sách Bảo Hành</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Thanh toán</h4>
+                    <div class="payment-icons">
+                        <img src="https://logos-world.net/wp-content/uploads/2020/09/Mastercard-Logo.png">
+                        <img src="https://cdn.icon-icons.com/icons2/1178/PNG/512/american-express-inverted_82085.png">
+                        <img src="https://i.pinimg.com/originals/2d/8f/2d/2d8f2d0c852509c079562c441baeec2d.png">
+                    </div>
+
+                    <h4>Đơn vị vận chuyển</h4>
+                    <div class="payment-icons">
+                        <img src="https://logos-world.net/wp-content/uploads/2020/09/Mastercard-Logo.png">
+                        <img src="https://cdn.icon-icons.com/icons2/1178/PNG/512/american-express-inverted_82085.png">
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Theo dõi chúng tôi</h4>
+                    <p>Facebook</p>
+                    <p>Instagram</p>
+                    <p>TikTok</p>
+                    <p>YouTube</p>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            // Danh sách sản phẩm
+            const products = {
+                1: {
+                    name: "Áo Thun Basic",
+                    price: "299.000đ",
+                    image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=800&h=800&fit=crop",
+                    description: "Áo thun basic với chất liệu cotton mềm mại, thoáng mát. Thiết kế đơn giản, dễ phối đồ. Phù hợp cho mọi hoạt động hàng ngày.",
+                    specs: {
+                        "Chất liệu": "100% Cotton",
+                        "Màu sắc": "Đen, Trắng, Xám",
+                        "Size": "S, M, L, XL",
+                        "Xuất xứ": "Việt Nam",
+                        "Bảo hành": "30 ngày"
+                    }
+                },
+                2: {
+                    name: "Quần Jean Nam",
+                    price: "599.000đ",
+                    image: "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSVns0y87Lgl6CPwo3iGqnKPelgcHYosjOJvi2UtbqE8ytsnaG3hGl0gpTCNlEN1ZQCX_ECWQK7qWhoHfxPfafbAdjzDFNoGBnZbjY14OJExENSN3QD41_ozg4pW05aFyuf3UlSorw&usqp=CAc",
+                    description: "Quần jean nam với form dáng slim fit, chất liệu denim cao cấp. Thiết kế hiện đại, phù hợp với nhiều phong cách.",
+                    specs: {
+                        "Chất liệu": "100% Cotton Denim",
+                        "Màu sắc": "Xanh đậm, Xanh nhạt",
+                        "Size": "28, 30, 32, 34, 36",
+                        "Xuất xứ": "Việt Nam",
+                        "Bảo hành": "30 ngày"
+                    }
+                },
+                3: {
+                    name: "Giày Thể Thao",
+                    price: "1.299.000đ",
+                    image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&h=800&fit=crop",
+                    description: "Giày thể thao với đế cao su chống trượt, lót giày êm ái. Thiết kế năng động, phù hợp cho chạy bộ và tập luyện.",
+                    specs: {
+                        "Chất liệu": "Da tổng hợp + Vải",
+                        "Màu sắc": "Trắng, Đen, Xanh",
+                        "Size": "38-44",
+                        "Xuất xứ": "Việt Nam",
+                        "Bảo hành": "6 tháng"
+                    }
+                },
+                4: {
+                    name: "Túi Xách Da",
+                    price: "899.000đ",
+                    image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800&h=800&fit=crop",
+                    description: "Túi xách da thật với thiết kế sang trọng, nhiều ngăn tiện lợi. Phù hợp cho công việc và đi chơi.",
+                    specs: {
+                        "Chất liệu": "Da bò thật",
+                        "Màu sắc": "Nâu, Đen",
+                        "Kích thước": "30x25x10 cm",
+                        "Xuất xứ": "Việt Nam",
+                        "Bảo hành": "12 tháng"
+                    }
+                },
+                5: {
+                    name: "Mũ Lưỡi Trai",
+                    price: "199.000đ",
+                    image: "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=800&h=800&fit=crop",
+                    description: "Mũ lưỡi trai với chất liệu vải cao cấp, có thể điều chỉnh size. Thiết kế trẻ trung, năng động.",
+                    specs: {
+                        "Chất liệu": "Vải Polyester",
+                        "Màu sắc": "Đen, Trắng, Xanh, Đỏ",
+                        "Size": "One size (có thể điều chỉnh)",
+                        "Xuất xứ": "Việt Nam",
+                        "Bảo hành": "30 ngày"
+                    }
+                },
+                6: {
+                    name: "Kính Mát",
+                    price: "399.000đ",
+                    image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=800&h=800&fit=crop",
+                    description: "Kính mát chống tia UV với gọng nhựa cao cấp, mắt kính phân cực. Bảo vệ mắt khỏi ánh nắng mặt trời.",
+                    specs: {
+                        "Chất liệu": "Nhựa Acetate + Mắt kính phân cực",
+                        "Màu sắc": "Đen, Nâu, Xanh",
+                        "Kích thước": "58mm",
+                        "Xuất xứ": "Việt Nam",
+                        "Bảo hành": "12 tháng"
+                    }
+                },
+                7: {
+                    name: "Đồng Hồ Nam",
+                    price: "1.999.000đ",
+                    image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&h=800&fit=crop",
+                    description: "Đồng hồ nam với mặt kính sapphire chống xước, dây da thật. Thiết kế sang trọng, phù hợp mọi dịp.",
+                    specs: {
+                        "Chất liệu": "Thép không gỉ + Da thật",
+                        "Màu sắc": "Bạc, Vàng, Đen",
+                        "Đường kính": "42mm",
+                        "Xuất xứ": "Thụy Sĩ",
+                        "Bảo hành": "24 tháng"
+                    }
+                },
+                8: {
+                    name: "Điện Thoại",
+                    price: "8.999.000đ",
+                    image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800&h=800&fit=crop",
+                    description: "Điện thoại thông minh với màn hình 6.7 inch, camera 64MP, pin 5000mAh. Hiệu năng mạnh mẽ, phù hợp mọi nhu cầu.",
+                    specs: {
+                        "Màn hình": "6.7 inch AMOLED",
+                        "Camera": "64MP + 12MP + 8MP",
+                        "RAM": "8GB",
+                        "Bộ nhớ": "128GB",
+                        "Pin": "5000mAh",
+                        "Bảo hành": "12 tháng"
+                    }
+                }
+            };
+
+            // Lấy ID sản phẩm từ URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = urlParams.get('id') || '1';
+            const product = products[productId];
+
+            if (product) {
+                // Tạo HTML cho sản phẩm
+                let specsHTML = '';
+                for (const [key, value] of Object.entries(product.specs)) {
+                    specsHTML += `<li><strong>${key}:</strong> ${value}</li>`;
+                }
+
+                const productHTML = `
+                    <div class="product-details-grid">
+                        <div>
+                            <img src="${product.image}" alt="${product.name}" class="product-image">
+                        </div>
+                        <div class="product-info">
+                            <h1>${product.name}</h1>
+                            <div class="product-price">${product.price}</div>
+                            <div class="product-description">
+                                <p>${product.description}</p>
+                            </div>
+                            <div class="product-specs">
+                                <h3>Thông tin sản phẩm</h3>
+                                <ul>
+                                    ${specsHTML}
+                                </ul>
+                            </div>
+                            <div class="buy-buttons">
+                                <button class="btn-buy-now" onclick="alert('Đã mua sản phẩm!')">Mua ngay</button>
+                                <button class="btn-add-cart" onclick="alert('Đã thêm vào giỏ hàng!')">Thêm vào giỏ</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                document.getElementById('product-content').innerHTML = productHTML;
+            } else {
+                document.getElementById('product-content').innerHTML = '<h1>Sản phẩm không tồn tại</h1>';
+            }
+        </script>
+    </body>
+</html>
+
