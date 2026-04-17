@@ -1,49 +1,21 @@
-//  lưu toàn bộ sản phẩm
+// ====== LƯU DATA ======
 let allProducts = [];
 
-//  Lấy API
+// ====== FETCH API ======
 async function fetchProducts() {
   try {
     let res = await fetch("https://api.escuelajs.co/api/v1/products");
     let data = await res.json();
 
-    allProducts = data; // ✅ FIX ở đây
-
+    allProducts = data;
     renderProducts(allProducts);
+
   } catch (err) {
     console.error("Lỗi API:", err);
   }
 }
 
-//  Render UI
-// function renderProducts(list) {
-//   let html = "";
-
-//   list.forEach(product => {
-//     html += `
-//       <div class="col-md-3 col-sm-6">
-//         <div class="product-card">
-//           <img src="${product.images[0]}" style="width:100%">
-          
-//           <h5>${product.title}</h5>
-//           <p class="price">${product.price}$</p>
-//           <div class="btn-group">
-//             <button onclick="addToCart(${product.id})">
-//               Thêm vào giỏ
-//             </button>
-
-//             <button class="buy-now" onclick="buyNow(${product.id})">
-//               Mua ngay
-//             </button>
-//           </div>
-//         </div>
-//       </div>
-//     `;
-//   });
-
-//   document.getElementById("productList").innerHTML = html;
-// }
-
+// ====== RENDER UI ======
 function renderProducts(list) {
   let html = "";
 
@@ -55,9 +27,9 @@ function renderProducts(list) {
     html += `
       <div class="col-md-3 col-sm-6">
         <div class="product-card">
-          <img src="${img}" style="width:100%" 
+          <img src="${img}" 
                onerror="this.src='https://via.placeholder.com/300'">
-          
+
           <h5>${product.title}</h5>
           <p class="price">${product.price}$</p>
 
@@ -78,20 +50,22 @@ function renderProducts(list) {
   document.getElementById("productList").innerHTML = html;
 }
 
-//  SEARCH
+// ====== SEARCH ======
 let searchInput = document.getElementById("search");
 
-searchInput.addEventListener("input", function () {
-  let keyword = searchInput.value.toLowerCase();
+if (searchInput) {
+  searchInput.addEventListener("input", function () {
+    let keyword = searchInput.value.toLowerCase();
 
-  let filtered = allProducts.filter(p =>
-    p.title.toLowerCase().includes(keyword)
-  );
+    let filtered = allProducts.filter(p =>
+      p.title.toLowerCase().includes(keyword)
+    );
 
-  renderProducts(filtered);
-});
+    renderProducts(filtered);
+  });
+}
 
-//  ADD TO CART
+// ====== ADD TO CART ======
 function addToCart(id) {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -114,8 +88,10 @@ function addToCart(id) {
   localStorage.setItem("cart", JSON.stringify(cart));
 
   alert("Đã thêm vào giỏ!");
+}
 
-  function buyNow(id) {
+// ====== BUY NOW ======
+function buyNow(id) {
   let product = allProducts.find(p => p.id === id);
 
   let cart = [
@@ -130,15 +106,9 @@ function addToCart(id) {
 
   localStorage.setItem("cart", JSON.stringify(cart));
 
-  // alert("Chuyển sang thanh toán!");
-
-  buyNow.onclick = function(){
-    window.location.href = "product-details.html";
-}
-  
-  
-}
+  //  chuyển sang trang giỏ hàng
+  window.location.href = "cart.html";
 }
 
-//  LOAD PAGE
+// ====== LOAD PAGE ======
 fetchProducts();

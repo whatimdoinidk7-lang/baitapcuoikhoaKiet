@@ -28,25 +28,37 @@
         </div>
     </div>
 
-    <div class="cartList" style="margin-top: 100px;"></div>
-        <div class="cartContainer">
-            <input type="checkbox"> Chọn sản phẩm
-            <p>Sản phẩm</p>
-            <p>Đơn giá</p>
-            <p>Số lượng</p>
+    <div class="cart-container">
+        <h2>Giỏ hàng của bạn</h2>
+        <div class="cart-header">
+            <p>Tên sản phẩm</p>
             <p>Giá tiền</p>
-            <!-- <input type="number" value="1" min="1"> -->
-            <!-- <img scr="https://www.nicepng.com/png/detail/208-2086588_trash-can-icon.png"> -->
+            <p>Số lượng</p>
+            <p>Tổng số tiền</p>
+            <p></p>
         </div>
 
-        <h3 class="TotalPrice">Tổng chi phí: </h3>
+    <div id="cartItems"></div>
+        <div class="cart-footer">
+            <h3 id="totalPrice">Tổng: 0$</h3>
+            <div class="continue">
+                <button onclick="window.location.href='home.html'">
+                    ← Mua tiếp
+                </button>
+                <button class="buy-now" id="checkout">
+                    Thanh toán
+                </button>
+            </div>
+        </div>
+    </div>
+        <!-- <h3 class="totalPrice">Tổng chi phí: </h3>
 
         <div class="cartButton">
             <button>Tiếp tục mua</button>
             <button>Thanh toán</button>
         </div>
-    </div>
-
+    </div> -->
+<script src="cart.js"></script>
 </body>
 <footer class="footer">
         <div class="footer-grid">
