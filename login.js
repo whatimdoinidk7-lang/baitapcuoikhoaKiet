@@ -22,6 +22,8 @@ btnLogin.onclick = function(){
     // JSON.parse: string -> object
     let userObject = JSON.parse(user)
 
+    console.log(userObject)
+
 
     if(email === ""){
         EmailError.innerText = "Vui lòng nhập email!";
