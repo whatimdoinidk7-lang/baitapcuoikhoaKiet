@@ -34,10 +34,14 @@ btnLogin.onclick = function(){
         // alert('Vui lòng nhập mật khẩu')
     }
     else if(email != userObject.email){
-        alert('Sai email. Vui lòng nhập lại!')
+        // alert('Sai email. Vui lòng nhập lại!')
+        EmailError.innerText = "Sai email. Vui lòng nhập lại!";
+        isValid = false;
     }
     else if(password != userObject.password){
-        alert('Sai mật khẩu. Vui lòng nhập lại!')
+        // alert('Sai mật khẩu. Vui lòng nhập lại!')
+        passwordError.innerText = "Sai mật khẩu. Vui lòng nhập lại!";
+        isValid = false;
     }
     else{
         window.location.href="./home.html"
