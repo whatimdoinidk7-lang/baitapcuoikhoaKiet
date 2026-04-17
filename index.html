@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home</title>
+        <link rel="stylesheet" href="si-tai-s.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+        <html lang="en">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+        <script src="https://www.w3schools.com/lib/w3.js"></script>
+        <style>
+            @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+            .home{
+                color: red;
+            }
+            .side-banner-left, .side-banner-right {
+                position: fixed;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 150px;
+                z-index: 100;
+            }
+            .side-banner-left {
+                left: 0;
+                width: 250px;
+            }
+            .side-banner-right {
+                right: 0;
+            }
+            .side-banner-left img, .side-banner-right img {
+                width: 100%;
+                height: auto;
+                border-radius: 0 10px 10px 0;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            }
+            .side-banner-right img {
+                border-radius: 10px 0 0 10px;
+            }
+            @media (max-width: 1200px) {
+                .side-banner-left, .side-banner-right {
+                    display: none;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- <div class="side-banner-left">
+            <img src="https://insieutoc.vn/wp-content/uploads/2021/02/mau-banner-dep.jpg" alt="Banner trái">
+        </div> -->
+
+        <!-- <div class="side-banner-right">
+            <img src="https://images.unsplash.com/photo-1557683311-eac922347aa1?w=300&h=600&fit=crop" alt="Banner phải">
+        </div> -->
+
+        <div>
+            <div class="containers">
+                <nav class="navbar">
+                    <div class="logo"><img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/store-logo-design-template-3ac57f780d1cae2a6d3a049f82c62437_screen.jpg?ts=1737372343"></div>
+                    <ul class="nav-links">
+                        <input type="text" id="search" placeholder="Tìm kiếm sản phẩm...">
+                        <li class="home"><a href="home.html">Trang chủ</a></li>
+                        <li><a href="settings.html">Cài đặt</a></li>
+                        <li><a href="about.html">Về chúng tôi</a></li>
+                        <li><a href="contact.html">Liên hệ</a></li>
+                        <li><a href="cart.html">Giỏ hàng</a></li>
+                        <li><a href="login.html">Đăng nhập</a></li>
+
+                    </ul>   
+                </nav>
+            </div>
+        </div>
+        <div class="container my-5">
+            <div id="productList" class="row g-4 justify-content-center"></div>
+        </div>
+
+        <!-- <div id="home" class="w3-content">
+            <img class="slides" src="https://tse1.mm.bing.net/th/id/OIP.j4ioktipelmTXBVqUDCOrQHaCs?cb=ucfimg2&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3">
+            <img class="slides" src="https://i.pinimg.com/736x/ef/70/85/ef7085be91d78613f0938fee57e45f4a.jpg">
+            <img class="slides" src="https://img.freepik.com/premium-vector/abstract-colourful-colorful-geometric-banner-light-triangle-line-shape-with-futuristic-concept-presentation-background_249611-5117.jpg">
+            <script>
+                w3.slideshow(".slides", 3000);
+            </script>
+        </div> -->
+
+        <!-- <div class="list">
+            <div class="container my-5">
+                <div class="row g-4 justify-content-center">
+                    <div class="col-md-3 col-sm-6">    
+                        <div class="product-card">
+                            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500&h=500&fit=crop" alt="Áo thun">
+                            <h5>Áo Thun Basic</h5>
+                            <p class="price">299.000đ</p>
+                            <button onclick="window.location.href='product-details.html?id=1'">Xem chi tiết</button>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6"> 
+                        <div class="product-card">
+                            <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSVns0y87Lgl6CPwo3iGqnKPelgcHYosjOJvi2UtbqE8ytsnaG3hGl0gpTCNlEN1ZQCX_ECWQK7qWhoHfxPfafbAdjzDFNoGBnZbjY14OJExENSN3QD41_ozg4pW05aFyuf3UlSorw&usqp=CAc" alt="Quần jean">
+                            <h5>Quần Jean Nam</h5>
+                            <p class="price">599.000đ</p>
+                            <button onclick="window.location.href='product-details.html?id=2'">Xem chi tiết</button>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6"> 
+                        <div class="product-card">
+                            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&h=500&fit=crop" alt="Giày thể thao">
+                            <h5>Giày Thể Thao</h5>
+                            <p class="price">1.299.000đ</p>
+                            <button onclick="window.location.href='product-details.html?id=3'">Xem chi tiết</button>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6"> 
+                        <div class="product-card">
+                            <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&h=500&fit=crop" alt="Túi xách">
+                            <h5>Túi Xách Da</h5>
+                            <p class="price">899.000đ</p>
+                            <button onclick="window.location.href='product-details.html?id=4'">Xem chi tiết</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row g-4 justify-content-center">
+                    <div class="col-md-3 col-sm-6">    
+                        <div class="product-card">
+                            <img src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=500&h=500&fit=crop" alt="Mũ lưỡi trai">
+                            <h5>Mũ Lưỡi Trai</h5>
+                            <p class="price">199.000đ</p>
+                            <button onclick="window.location.href='product-details.html?id=5'">Xem chi tiết</button>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6"> 
+                        <div class="product-card">
+                            <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=500&h=500&fit=crop" alt="Kính mát">
+                            <h5>Kính Mát</h5>
+                            <p class="price">399.000đ</p>
+                            <button onclick="window.location.href='product-details.html?id=6'">Xem chi tiết</button>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6"> 
+                        <div class="product-card">
+                            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&h=500&fit=crop" alt="Đồng hồ">
+                            <h5>Đồng Hồ Nam</h5>
+                            <p class="price">1.999.000đ</p>
+                            <button onclick="window.location.href='product-details.html?id=7'">Xem chi tiết</button>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6"> 
+                        <div class="product-card">
+                            <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500&h=500&fit=crop" alt="Điện thoại">
+                            <h5>Điện Thoại</h5>
+                            <p class="price">8.999.000đ</p>
+                            <button onclick="window.location.href='product-details.html?id=8'">Xem chi tiết</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+        <script src="./home.js"></script>
+    </body>
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Dịch vụ khách hàng</h4>
+                <p>Trung Tâm Trợ Giúp</p>
+                <p>Blog</p>
+                <p>Mall</p>
+                <p>Hướng Dẫn Mua Hàng</p>
+                <p>Hướng Dẫn Bán Hàng</p>
+                <p>Chính Sách Bảo Hành</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Thanh toán</h4>
+                <div class="payment-icons">
+                    <img src="https://logos-world.net/wp-content/uploads/2020/09/Mastercard-Logo.png">
+                    <img src="https://cdn.icon-icons.com/icons2/1178/PNG/512/american-express-inverted_82085.png">
+                    <img src="https://i.pinimg.com/originals/2d/8f/2d/2d8f2d0c852509c079562c441baeec2d.png">
+                </div>
+
+                <h4>Đơn vị vận chuyển</h4>
+                <div class="payment-icons">
+                    <img src="https://logos-world.net/wp-content/uploads/2020/09/Mastercard-Logo.png">
+                    <img src="https://cdn.icon-icons.com/icons2/1178/PNG/512/american-express-inverted_82085.png">
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Theo dõi chúng tôi</h4>
+                <p>Facebook</p>
+                <p>Instagram</p>
+                <p>TikTok</p>
+                <p>YouTube</p>
+            </div>
+
+        </div>
+    </footer>
+</html>
