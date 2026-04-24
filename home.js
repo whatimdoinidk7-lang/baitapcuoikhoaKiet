@@ -4,8 +4,7 @@ let allProducts = [];
 // ====== FETCH API ======
 async function fetchProducts() {
   try {
-    // let res = await fetch("https://api.escuelajs.co/api/v1/products");
-    let res = await fetch("https://dummyjson.com/products");
+    let res = await fetch("https://api.escuelajs.co/api/v1/products");
     let data = await res.json();
 
     allProducts = data;
