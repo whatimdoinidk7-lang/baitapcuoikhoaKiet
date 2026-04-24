@@ -18,7 +18,7 @@ btnLogin.onclick = function(){
 
     if (!isValid) return;
     
-    let user = localStorage.getItem('register_information')
+    let user = localStorage.getItem('users')
     // JSON.parse: string -> object
     let userObject = JSON.parse(user)
 
@@ -35,12 +35,12 @@ btnLogin.onclick = function(){
     // if(password === ""){
         // alert('Vui lòng nhập mật khẩu')
     }
-    else if(email != userObject.email){
+    else if(email != userObject[0].email){
         // alert('Sai email. Vui lòng nhập lại!')
         EmailError.innerText = "Sai email. Vui lòng nhập lại!";
         isValid = false;
     }
-    else if(password != userObject.password){
+    else if(password != userObject[0].password){
         // alert('Sai mật khẩu. Vui lòng nhập lại!')
         passwordError.innerText = "Sai mật khẩu. Vui lòng nhập lại!";
         isValid = false;

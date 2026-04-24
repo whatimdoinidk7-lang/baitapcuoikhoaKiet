@@ -1,7 +1,7 @@
-// ====== LƯU DATA ======
+//LƯU DATA
 let allProducts = [];
 
-// ====== FETCH API ======
+//FETCH API
 async function fetchProducts() {
   try {
     let res = await fetch("https://api.escuelajs.co/api/v1/products");
@@ -15,7 +15,7 @@ async function fetchProducts() {
   }
 }
 
-// ====== RENDER UI ======
+//RENDER UI
 function renderProducts(list) {
   let html = "";
 
@@ -50,7 +50,7 @@ function renderProducts(list) {
   document.getElementById("productList").innerHTML = html;
 }
 
-// ====== SEARCH ======
+//SEARCH
 let searchInput = document.getElementById("search");
 
 if (searchInput) {
@@ -65,7 +65,7 @@ if (searchInput) {
   });
 }
 
-// ====== ADD TO CART ======
+//ADD TO CART
 function addToCart(id) {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -90,7 +90,7 @@ function addToCart(id) {
   alert("Đã thêm vào giỏ!");
 }
 
-// ====== BUY NOW ======
+//BUY NOW
 function buyNow(id) {
   let product = allProducts.find(p => p.id === id);
 
@@ -110,5 +110,5 @@ function buyNow(id) {
   window.location.href = "cart.html";
 }
 
-// ====== LOAD PAGE ======
+//LOAD PAGE
 fetchProducts();
